@@ -1,0 +1,23 @@
+Materials for POMODOR
+
+colors : 
+
+background:#1E1E1E
+background-CTA:343333
+text-color:#FFFFFF
+inactive-contrast:#656262
+Break-color:#11A37F
+chat-color-bot:#11A37F
+chat-color-user:#656262
+
+Fonts :
+
+VisueltPro : 
+Quicksand : 
+
+Size : 
+
+timer : 55px
+Big-title:38px 
+text-content : 20 px 
+links: 15px 
