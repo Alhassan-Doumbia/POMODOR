@@ -4,6 +4,8 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    border:1px solid purple;
+    scroll-behavior: smooth;
 }
 //seting things up 
 @mixin centering{
@@ -33,11 +35,38 @@ $chat-color-user: #656262;
     font-family:"Quicksand-light";
     src: url("Fonts/Quicksand_Light.otf");
 }
+@font-face {
+    font-family:"Quicksand-bold";
+    src: url("Fonts/Quicksand_Bold.otf");
+}
+/*-----------------------------------*\
+ #SELECTION // scrollBar
+\*-----------------------------------*/
 
+::selection{
+    background:$text-color;
+    color:$background;
+}
+
+::-webkit-scrollbar-track{
+    background-color: $background;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    width: 10px;
+    border-radius:6px;
+    background-color: $inactive-contrast;
+}
+//à coder avec olivier tchai
+/*-----------------------------------*\
+ # fin SELECTION
+\*-----------------------------------*/
 body{
     padding-left:50px;
     padding-right: 50px;
-    background-color: $background;}
+    background-color: $background;
+    position: relative;
+}
 header{
     height: fit-content;
     width: 100%;
@@ -65,7 +94,7 @@ section{
 }
 // main{padding-right:100px}
 .timeZone{
-    background-color:red;
+    // background-color:red;
     .chronoZone{
         @include centering();
         flex-direction: column;
@@ -76,7 +105,7 @@ section{
         font-size:30px;
         margin-top:60px;
         margin-left:18%;
-        background-color: blue;
+        // background-color: blue;
             img{
                 width: 64px;
                 height: 64px;
@@ -148,15 +177,20 @@ section{
     
             padding-left:10px;
             padding-right:10px;
+            // display: none;
         }
         .taskContainer{//classe du ul contenant les taches avec les checkbox
             // background-color: purple;
             width:794px;
             min-height:200px;
-            height: fit-content;
+            max-height: 400px;
+            height:fit-content;
+            overflow-y: auto;
             @include centering();
             flex-direction: column;
 
+//ça a affiché une scroll bar horizontale toute degueu je sais même pas pourquoi purée! , je pensais que c'était parce qu'en était en flex direction:colonne 
+//mais bon c'est pas ca 
         }
     }//un peu contraire à l'éthique  mais bon
     
@@ -200,7 +234,121 @@ input[type="checkbox"]:checked{
     color:$background-CTA;
     opacity: 0.9;
     display: none;
+
     
     // dans le JS celui là sera desactivé ou reactivé selon qu'il y ait du contenu dans le ul ou non
 
+}
+
+.chatContainer{
+    width: 400px;
+    height:600px;
+    background-color: $background-CTA;
+    position: fixed;
+    top:55px;
+    right:20px;
+    .eternity{
+            font-family: "Quicksand-bold";
+            font-size:20px;
+            text-align: center;
+            color: $text-color;
+            width:100%;
+            height:77px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+            @include centering();
+            p{display: inline-block;}
+    }
+    .chat{
+        width: 100%;
+        height:450px;
+        padding-left:25px;
+        padding-right: 25px;
+        overflow-y: auto; 
+        background: transparent;
+        scrollbar-color: $background-CTA;
+            .chatBubble{
+                width: fit-content;
+                height: fit-content;
+                max-width:844px;
+                word-wrap:break-word;/*pour pouvoir faire les retour à la ligne */
+                min-width:100px;
+                min-height:24px;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                margin-top:10px;
+                background-color:#656262;
+                color:$text-color;
+                border-radius: 20px;
+                font-family:sans-serif;
+                font-size: 15px;
+            }
+    }
+    
+    form{
+        width:100%;
+        height: fit-content;
+        display: flex;
+        align-items:center;
+        justify-content: space-around;
+        
+        input{
+            height:50px;
+            width:300px;
+            outline: none;
+            font-size: 15px;
+            color: $text-color;
+            background-color: $background-CTA;
+            border:none;
+            &::placeholder{
+                color: #656262;
+                font-size:12px;
+                font-family:sans-serif;
+            }
+        }
+        .sendIcon{
+            font-size: 15px;
+            color: $text-color;
+        }
+    }
+}
+
+//meerci element olivier pour le footer 
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top:100px;
+
+    font-family: "Vpro-Bold";
+}
+
+.navigationf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li{
+        font-size: 15px;
+        margin: 0 20px;
+    }
+}
+.navigationf a{
+    color: $text-color;
+}
+
+footer p{
+    color:$break-color;
+    margin: 3px 0 5px;
+}
+
+.souligne{
+    text-decoration:underline;
+}
+
+footer p:nth-last-child(1){
+    color: grey;
+    font-size: 14px;
 }
