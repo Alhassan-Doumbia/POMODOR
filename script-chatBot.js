@@ -1,35 +1,32 @@
-// c'est ici qu'on écrira tout le code pour le bails
-//à faire :
-//creer le timer 
-// fair fonctionner le bouton qui creera les tâches
-//faire la logique du chat 
 
 const chatContainer=document.querySelector(".chatContainer");
 const chat=document.querySelector(".chat")//le ul conttenant les bulles de chat
-const userInputField=document.querySelector(".userInputField");
+const userInput=document.querySelector(".userInputField").value;
+const userTextArea=document.querySelector(".userInputField")
 const sendinIcon=document.querySelector(".sendinIcon");
-
 //creer une bulle de message : 
 function newMessage(){
-    let userInput=userInputField.value;
-    if(inputField.value===""){console.log("empty prompt , not displayed")}
-    if(userInput!=""){
-        let chatBubble=document.createElement("li");
-        chatBubble.innerText=`${userInput}`;
-        chatBubble.appendChild(chatBubble);
-        userInputField.value = "";
-        return false;
-    }
+    //le nerf de guerre c'est ce bail
+    const message=document.createElement("li");
+    const userInputField=document.getElementsByClassName("userInputField")
+    message.innerText=userInput;
+    chat.appendChild(message);
+    //pour soucis de debuggage 
+    console.log("ajout du nouveau message en appuyant sur la touce entrée ou sur le logo ")
+    //pour vider le bail
+    userInputField.value = "";
+    return false; 
 }
 //utilisation de l'icone d'envoit pour envoyer des requêtes
-sendinIcon.addEventListener('click',newMessage);
-
-//utilisationd de la touche entrée pour faire la même chose 
+sendinIcon.addEventListener('click',newMessage)
+//utilisation de la touche entrée 
 userInputField.addEventListener('keypress',(e)=>{
-    if(e.keyCode===13 && inputField.value==""){
-        console.log("empty prompt,not displayed")//au cas où l'utilisateur voudrait envoyer un bail vide ya des fdp oh
-        e.preventDefault();}
-
-    if(e.keyCode==13){e.preventDefault(),newMessage}
+    if (e.which==13 ||e.keyCode==13 && userInput!=""){
+        // e.preventDefault();
+        newMessage();
+    }
+    else{
+        console.log("empty message , not displayed");
+    }
 })
 
