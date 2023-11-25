@@ -37,11 +37,20 @@
             </div>
             <div class="taskList">
                 <button class="createTask">Create a task</button>
+
+                <form action="#" class="taskDefine">
+                    <textarea name="defineTask" id="defineTaskTextArea"placeholder="type your task here "></textarea>
+                    <div><!--Très mauvaise sémantique mais , ça a son utilité par ce que je veux aligner le bouton vers la droite-->
+                        <button class="sendTask">Tasking</button>
+                    </div>
+            
+                </form>
+
                 <ul class="taskContainer">
                     <p class="emptyState">Your task will appear here.</p><!--c'est ce texte qui va s'afficher quand il n'y aura rien dans le UL mais 
                     dès qu'il ya du contenu , il disparaitra-->
-                    <li class="task"><input type="checkbox" name="" id="taskCheck" class="increaseBox"><!--la tache en question serra entré là --></li>
-                    <li class="task"><input type="checkbox" name="" id="taskCheck" class="increaseBox"><!--la tache en question serra entré là --></li>
+                    <li class="task"><input type="checkbox" name=""  class="increaseBox"><!--la tache en question serra entré là --></li>
+                    <li class="task"><input type="checkbox" name=""  class="increaseBox"><!--la tache en question serra entré là --></li>
                 </ul>
             </div>
         </section>
@@ -50,20 +59,10 @@
             <div class="eternity">
                 <p>E.T.E.R.N.I.T.Y</p>
             </div>
-            <ul class="chat">
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
-                <li class="chatBubble">bonjour</li>
+            <ul class="chat">   
             </ul>
             <form action="#">
-                <input type="text" placeholder="type your messages here">
+                <input type="text" placeholder="type your messages here" class="userInputField" autocomplete="off">
                 <ion-icon name="send" class="sendIcon"></ion-icon>
             </form>
         </section>
@@ -80,8 +79,9 @@
     <p>Made with heart by <span class="souligne">DoumbiaAlhassan</span> & Acakpo olivier</p>
     <p> 2023 POMODORO. Tous droits réservés.</p>
     </footer>
+    <script src="script-chatBot.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
+    
 </body>
 </html>

@@ -5,7 +5,6 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  border: 1px solid purple;
   scroll-behavior: smooth;
 }
 
@@ -24,6 +23,10 @@
 @font-face {
   font-family: "Quicksand-bold";
   src: url("Fonts/Quicksand_Bold.otf");
+}
+@font-face {
+  font-family: "Vpro-Reg";
+  src: url("Fonts/VisueltPro-Regular.ttf");
 }
 /*-----------------------------------*\
  #SELECTION // scrollBar
@@ -51,7 +54,6 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   background-color: #1E1E1E;
-  position: relative;
 }
 
 header {
@@ -80,6 +82,10 @@ header .navbar .navlinks .links a {
 
 section {
   height: fit-content;
+}
+
+main {
+  position: relative;
 }
 
 .timeZone .chronoZone {
@@ -212,7 +218,7 @@ input[type=checkbox]:checked {
   height: 600px;
   background-color: #343333;
   position: fixed;
-  top: 55px;
+  top: 45px;
   right: 20px;
 }
 .chatContainer .eternity {
@@ -239,7 +245,7 @@ input[type=checkbox]:checked {
   background: transparent;
   scrollbar-color: #343333;
 }
-.chatContainer .chat .chatBubble {
+.chatContainer .chat li {
   width: fit-content;
   height: fit-content;
   max-width: 844px;
@@ -262,6 +268,7 @@ input[type=checkbox]:checked {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border: 1px solid #656262;
 }
 .chatContainer form input {
   height: 50px;
@@ -280,6 +287,48 @@ input[type=checkbox]:checked {
 .chatContainer form .sendIcon {
   font-size: 15px;
   color: #FFFFFF;
+  cursor: pointer;
+}
+
+.taskDefine {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+  width: 100%;
+  height: fit-content;
+}
+.taskDefine textarea {
+  width: 100%;
+  height: 280px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 1px solid #343333;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: "Vpro-Reg", sans-serif;
+  font-size: 20px;
+}
+textarea .taskDefineplaceholder {
+  color: #656262;
+}
+.taskDefine div {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+.taskDefine div button {
+  font-family: "Vpro-Bold" sans-serif;
+  color: #FFFFFF;
+  font-weight: 800;
+  border-radius: 7px;
+  width: 150px;
+  height: 39px;
+  background-color: #11A37F;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 footer {

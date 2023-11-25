@@ -4,7 +4,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    border:1px solid purple;
+    // border:1px solid purple;
     scroll-behavior: smooth;
 }
 //seting things up 
@@ -39,6 +39,10 @@ $chat-color-user: #656262;
     font-family:"Quicksand-bold";
     src: url("Fonts/Quicksand_Bold.otf");
 }
+@font-face {
+    font-family:"Vpro-Reg";
+    src: url("Fonts/VisueltPro-Regular.ttf");
+}
 /*-----------------------------------*\
  #SELECTION // scrollBar
 \*-----------------------------------*/
@@ -65,7 +69,6 @@ body{
     padding-left:50px;
     padding-right: 50px;
     background-color: $background;
-    position: relative;
 }
 header{
     height: fit-content;
@@ -92,6 +95,7 @@ header{
 section{
     height: fit-content;
 }
+main{position: relative;}
 // main{padding-right:100px}
 .timeZone{
     // background-color:red;
@@ -140,7 +144,8 @@ section{
     display: flex;
     flex-direction: column;
     height: fit-content;//dans un premier temps
-    width: fit-content; //dans un premier temps
+    width: fit-content;
+    //dans un premier temps
     // background-color: green;
     
     .taskList{
@@ -183,7 +188,7 @@ section{
             // background-color: purple;
             width:794px;
             min-height:200px;
-            max-height: 400px;
+            max-height:400px;
             height:fit-content;
             overflow-y: auto;
             @include centering();
@@ -245,7 +250,7 @@ input[type="checkbox"]:checked{
     height:600px;
     background-color: $background-CTA;
     position: fixed;
-    top:55px;
+    top:45px;
     right:20px;
     .eternity{
             font-family: "Quicksand-bold";
@@ -266,7 +271,7 @@ input[type="checkbox"]:checked{
         overflow-y: auto; 
         background: transparent;
         scrollbar-color: $background-CTA;
-            .chatBubble{
+            li{
                 width: fit-content;
                 height: fit-content;
                 max-width:844px;
@@ -291,6 +296,7 @@ input[type="checkbox"]:checked{
         display: flex;
         align-items:center;
         justify-content: space-around;
+        border: 1px solid $inactive-contrast;
         
         input{
             height:50px;
@@ -299,7 +305,8 @@ input[type="checkbox"]:checked{
             font-size: 15px;
             color: $text-color;
             background-color: $background-CTA;
-            border:none;
+            border: none;
+            // border:1px solid purple;
             &::placeholder{
                 color: #656262;
                 font-size:12px;
@@ -309,8 +316,56 @@ input[type="checkbox"]:checked{
         .sendIcon{
             font-size: 15px;
             color: $text-color;
+            cursor:pointer;
         }
     }
+}
+.taskDefine{
+    display: flex;
+    flex-direction: column;
+    margin:20px 0px;
+    width: 100%;
+    height: fit-content;
+
+    //display:none; // Quand on cliquera sur le bouton create Task ,le display none sera effacé ,lorsqu'on cliquera 
+    //sur tasking , le display:none sera rajouté
+    textarea{
+        width: 100%;
+        height:280px;
+        padding: 15px 15px;
+        border-radius:10px;
+        border: 1px solid $background-CTA;
+        background-color: transparent;
+    
+        color: $text-color;
+        font-family:"Vpro-Reg",sans-serif;
+        font-size:20px;
+    }
+    textarea &placeholder{
+        color: #656262;
+    }
+    div{
+        width: 100%;
+        height: fit-content;
+        display:flex;
+        justify-content: end;
+        margin-top: 10px;
+
+        button{
+            font-family: "Vpro-Bold"sans-serif;
+            color: $text-color;
+            font-weight: 800;
+            border-radius:7px;
+            width:150px;
+            height:39px;
+            background-color:$break-color;
+            cursor: pointer;
+            outline:none;
+            border: none;
+
+        }
+    }
+
 }
 
 //meerci element olivier pour le footer 
@@ -352,3 +407,8 @@ footer p:nth-last-child(1){
     color: grey;
     font-size: 14px;
 }
+
+
+// écritre de la partie responsive , qui Ne sera bien evidemment pas faites krkr 
+// je vais creer une media query qui dès qu'elle se rendra compte que l'écran a une taille de phone ,
+// plus rien ne s'affiche et ça va dire que nous travaillons actuellement sur le mise en place du responsive
