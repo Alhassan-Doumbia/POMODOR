@@ -19,8 +19,9 @@ ___________________Or_____________________________
 go to this link : https://pomodoro.io
 
 ## Screenshots 📷
-
-![Pomodoro App](screenshots/pomodoro-app.png)
+designs-files\MainPage proposition 3.png
+designs-files\MainPage proposition 6(newFeature-ecrire les taches ).png
+designs-files\MainPage proposition 4 -temps de repos.png
 
 ## Usage Tips 💡
 
