@@ -19,9 +19,10 @@ ___________________Or_____________________________
 go to this link : https://pomodoro.io
 
 ## Screenshots 📷
-designs-files\MainPage proposition 3.png
-designs-files\MainPage proposition 6(newFeature-ecrire les taches ).png
-designs-files\MainPage proposition 4 -temps de repos.png
+![MainPage proposition 3](https://github.com/Alhassan-Doumbia/POMODOR/assets/138634319/309bf77e-3de8-432b-91cc-6b5edb65eb95)
+
+![MainPage proposition 6(newFeature-ecrire les taches )](https://github.com/Alhassan-Doumbia/POMODOR/assets/138634319/63099184-65a0-402f-8c6d-fd69c1dd07ce)
+![MainPage proposition 4 -temps de repos](https://github.com/Alhassan-Doumbia/POMODOR/assets/138634319/d8b6fc15-bc83-40b8-b632-37fb12f32eba)
 
 ## Usage Tips 💡
 
