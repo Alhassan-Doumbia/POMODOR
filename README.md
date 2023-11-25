@@ -16,7 +16,7 @@ Welcome to the Pomodoro Productivity App! This application helps you manage your
 3. Start boosting your productivity with Pomodoro!
 ___________________Or_____________________________
 
-go to this link : https://pomodoro.io
+go to this link : https://pomodoro.io  [not active  actually , it's for fun and make it look more professional XD]
 
 ## Screenshots 📷
 ![MainPage proposition 3](https://github.com/Alhassan-Doumbia/POMODOR/assets/138634319/309bf77e-3de8-432b-91cc-6b5edb65eb95)
