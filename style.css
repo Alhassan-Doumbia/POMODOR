@@ -144,9 +144,9 @@ main {
   align-items: center;
 }
 .taskZone .taskList .createTask {
-  border: 3px dashed #FFFFFF;
+  border: 5px dashed #FFFFFF;
   border-radius: 3px;
-  width: 473px;
+  width: 450px;
   height: 56px;
   font-family: "Vpro-Bold", sans-serif;
   font-size: 20px;
@@ -366,6 +366,94 @@ footer p {
 footer p:nth-last-child(1) {
   color: grey;
   font-size: 14px;
+}
+
+@media (max-width: 360px) {
+  .timeZone {
+    display: none;
+  }
+  .chatContainer {
+    display: none;
+  }
+  .chronoZone {
+    display: none;
+  }
+  .taskZone {
+    display: none;
+  }
+  body {
+    background-color: #1E1E1E;
+    padding: 30px 40px;
+  }
+  header {
+    width: 100%;
+  }
+  .navbar {
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar li {
+    display: none;
+  }
+  .navbar img {
+    width: 72px;
+    height: 68px;
+  }
+  .navbar .menuIcon {
+    font-size: 30px;
+    color: #FFFFFF;
+    display: inline-block;
+  }
+  .sorryText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .sorryText .biggerText {
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: "Vpro-Bold";
+  }
+  .sorryText .smallerText {
+    font-size: 20px;
+    color: #11A37F;
+    font-family: "Vpro-Reg";
+    margin: 20px 0px;
+  }
+  .sorryText .tenor-gif-embed {
+    width: 100%;
+    height: 200px;
+    background-image: url("Image&Data/on-it-kermit.gif");
+    background-size: cover;
+    filter: brightness(0.7);
+  }
+  footer {
+    font-size: 12px;
+    gap: 10px;
+  }
+  footer .logo {
+    width: 44px;
+    height: 44px;
+  }
+  footer a {
+    font-size: 12px;
+  }
+  footer .copyRight {
+    font-size: 9px;
+  }
+}
+@media (min-width: 361px) {
+  .menuIcon {
+    display: none;
+  }
+  .gifContainer {
+    display: none;
+  }
+  .sorryText {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
