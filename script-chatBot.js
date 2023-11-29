@@ -29,3 +29,4 @@ userInputField.addEventListener('keypress', (e) => {
         console.log("Message vide, non affiché.");
     }
 });
+// j'ai fini par  trouver les problème krkr
