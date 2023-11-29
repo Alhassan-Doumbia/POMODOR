@@ -244,23 +244,31 @@ input[type=checkbox]:checked {
   overflow-y: auto;
   background: transparent;
   scrollbar-color: #343333;
+  display: flex;
+  flex-direction: column;
 }
 .chatContainer .chat li {
   width: fit-content;
   height: fit-content;
-  max-width: 844px;
-  word-wrap: break-word; /*pour pouvoir faire les retour à la ligne */
+  max-width: 250px;
   min-width: 100px;
   min-height: 24px;
+  overflow-wrap: break-word;
   padding: 15px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 10px;
   background-color: #656262;
   color: #FFFFFF;
   border-radius: 20px;
   font-family: sans-serif;
   font-size: 15px;
+  flex-shrink: 1;
+}
+.chatContainer .chat li p {
+  display: inline;
+  word-wrap: break-word;
 }
 .chatContainer form {
   width: 100%;
@@ -268,7 +276,7 @@ input[type=checkbox]:checked {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid #656262;
+  border-top: 1px solid #656262;
 }
 .chatContainer form input {
   height: 50px;
@@ -303,7 +311,7 @@ input[type=checkbox]:checked {
   padding: 15px 15px;
   border-radius: 10px;
   border: 1px solid #343333;
-  background-color: transparent;
+  background-color: #000;
   color: #FFFFFF;
   font-family: "Vpro-Reg", sans-serif;
   font-size: 20px;
@@ -318,17 +326,63 @@ textarea .taskDefineplaceholder {
   justify-content: end;
   margin-top: 10px;
 }
-.taskDefine div button {
-  font-family: "Vpro-Bold" sans-serif;
-  color: #FFFFFF;
-  font-weight: 800;
-  border-radius: 7px;
-  width: 150px;
-  height: 39px;
-  background-color: #11A37F;
-  cursor: pointer;
-  outline: none;
+
+.taskDefine button {
   border: none;
+  background: #000;
+  color: #11A37F;
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 10px 0 0 0;
+  position: relative;
+  border: 1px solid #11A37F;
+  z-index: 10;
+  overflow: hidden;
+  transition: ease 500ms;
+  text-transform: capitalize;
+  font-family: "Vpro-Black";
+  font-weight: 800px;
+  outline: none;
+}
+
+.taskDefine button::before {
+  content: "";
+  width: 0;
+  height: 60px;
+  background: #11A37F;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  transform: translateX(0);
+  z-index: -1;
+  transition: ease 500ms;
+}
+
+.taskDefine button::after {
+  content: "";
+  width: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.0941176471);
+  position: absolute;
+  left: 0;
+  top: -5px;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: all ease 500ms;
+}
+
+.taskDefine button:hover {
+  color: #fff;
+}
+
+.taskDefine button:hover::after {
+  width: 300px;
+}
+
+.taskDefine button:hover::before {
+  width: 100%;
 }
 
 footer {

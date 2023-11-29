@@ -4,8 +4,9 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    // border:1px solid purple;
+    //  border:1px solid purple;
     scroll-behavior: smooth;
+
 }
 //seting things up 
 @mixin centering{
@@ -271,22 +272,33 @@ input[type="checkbox"]:checked{
         overflow-y: auto; 
         background: transparent;
         scrollbar-color: $background-CTA;
+        display: flex;
+        flex-direction:column;
             li{
+                // display: inline-block;
                 width: fit-content;
                 height: fit-content;
-                max-width:844px;
-                word-wrap:break-word;/*pour pouvoir faire les retour à la ligne */
+                max-width:250px;
                 min-width:100px;
                 min-height:24px;
+                overflow-wrap: break-word;//pour faire revenir le texte
                 padding: 15px;
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
                 margin-top:10px;
                 background-color:#656262;
                 color:$text-color;
                 border-radius: 20px;
                 font-family:sans-serif;
                 font-size: 15px;
+
+                flex-shrink: 1;// pour que le texte reviennent automatiquement à la ligne 
+
+                p{
+                    display: inline;
+                    word-wrap: break-word;
+                }
             }
     }
     
@@ -296,7 +308,7 @@ input[type="checkbox"]:checked{
         display: flex;
         align-items:center;
         justify-content: space-around;
-        border: 1px solid $inactive-contrast;
+        border-top: 1px solid $inactive-contrast;
         
         input{
             height:50px;
@@ -335,7 +347,7 @@ input[type="checkbox"]:checked{
         padding: 15px 15px;
         border-radius:10px;
         border: 1px solid $background-CTA;
-        background-color: transparent;
+        background-color:#000;
     
         color: $text-color;
         font-family:"Vpro-Reg",sans-serif;
@@ -351,23 +363,68 @@ input[type="checkbox"]:checked{
         justify-content: end;
         margin-top: 10px;
 
-        button{
-            font-family: "Vpro-Bold"sans-serif;
-            color: $text-color;
-            font-weight: 800;
-            border-radius:7px;
-            width:150px;
-            height:39px;
-            background-color:$break-color;
-            cursor: pointer;
-            outline:none;
-            border: none;
-
-        }
+     
     }
 
 }
+//style du button et animation{debut}
+.taskDefine button{
+    border: none;
+    background: #000;
+    color:$break-color;
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    position: relative;
+    border: 1px solid $break-color;
+    z-index: 10;
+    overflow: hidden;
+    transition: ease 500ms;
+    text-transform: capitalize;
+    font-family:"Vpro-Black";
+    font-weight: 800px;
+    outline: none;
+}
 
+.taskDefine button::before{
+    content: "";
+    width: 0;
+    height: 60px;
+    background: $break-color;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    transform: translateX(0);
+    z-index: -1;
+    transition: ease 500ms;
+}
+
+.taskDefine button::after{
+    content: "";
+    width:0;
+    height: 60px;
+    background: #ffffff18;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: all ease 500ms;
+}
+.taskDefine button:hover{
+    color: #fff;
+}
+
+.taskDefine button:hover::after{
+    width: 300px;
+}
+
+.taskDefine button:hover::before{
+    width: 100%;
+}
+// style du button et animation{fin]
 //meerci element olivier pour le footer 
 
 footer{
