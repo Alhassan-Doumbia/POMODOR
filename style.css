@@ -111,6 +111,10 @@ main {
   width: fit-content;
   margin-top: 20px;
 }
+.timeZone .chronoZone .timer h1, .timeZone .chronoZone .timer span {
+  font-family: "Vpro-Bold";
+  font-size: 65px;
+}
 .timeZone .chronoZone p {
   font-family: "Quicksand-light";
   font-size: 20px;
@@ -155,7 +159,7 @@ main {
   margin-top: 50px;
   cursor: pointer;
 }
-.taskZone .taskList .task {
+.taskZone .taskList li {
   width: 794px;
   min-height: 78px;
   height: fit-content;
@@ -210,7 +214,7 @@ input[type=checkbox]:checked {
   font-family: "Vpro-Bold";
   color: #343333;
   opacity: 0.9;
-  display: none;
+  display: block;
 }
 
 .chatContainer {
@@ -264,6 +268,7 @@ input[type=checkbox]:checked {
   border-radius: 20px;
   font-family: sans-serif;
   font-size: 15px;
+  animation: bubbleAppearing 1s cubic-bezier(0.63, -0.05, 0.18, 0.94) 1;
   flex-shrink: 1;
 }
 .chatContainer .chat li p {
@@ -509,5 +514,46 @@ footer p:nth-last-child(1) {
     display: none;
   }
 }
+/*Le bloc des animations  debut*/
+@keyframes bubbleAppearing {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes taskAppearing {
+  from {
+    transform: translatex(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+@keyframes hiddenTask {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+/*Le bloc des animations  fin*/
 
 /*# sourceMappingURL=style.css.map */

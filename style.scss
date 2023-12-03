@@ -120,6 +120,10 @@ main{position: relative;}
                 height: 71px;
                 width: fit-content;
                 margin-top: 20px;
+                h1,span{
+                    font-family: "Vpro-Bold";
+                    font-size:65px;
+                }
             }
             p{
                 font-family: "Quicksand-light";
@@ -167,7 +171,7 @@ main{position: relative;}
 
             cursor: pointer;
         }
-        .task{
+        li{
             width:794px;
             min-height: 78px;
             height: fit-content;
@@ -239,7 +243,7 @@ input[type="checkbox"]:checked{
     font-family: "Vpro-Bold";
     color:$background-CTA;
     opacity: 0.9;
-    display: none;
+    display:block;
 
     
     // dans le JS celui là sera desactivé ou reactivé selon qu'il y ait du contenu dans le ul ou non
@@ -292,9 +296,8 @@ input[type="checkbox"]:checked{
                 border-radius: 20px;
                 font-family:sans-serif;
                 font-size: 15px;
-
+                animation: bubbleAppearing 1s cubic-bezier(0.63,-0.05, 0.18, 0.94) 1;// animation d'apparition des messages 
                 flex-shrink: 1;// pour que le texte reviennent automatiquement à la ligne 
-
                 p{
                     display: inline;
                     word-wrap: break-word;
@@ -548,3 +551,45 @@ footer p:nth-last-child(1){
 }
 
 // le bug d'affichage  doit être dûe au navigateur , parce que mine de rien , le projet fonctionne très bien sous chrome 
+
+/*Le bloc des animations  debut*/
+
+@keyframes bubbleAppearing {
+    from {
+      transform: translateY(100%); 
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+  }
+
+@keyframes taskAppearing {
+    from {
+      transform: translatex(100%); 
+      opacity: 0;
+    }
+    to {
+      transform: translatex(0); 
+      opacity: 1;
+    }
+  }
+
+@keyframes hiddenTask {
+    0%{
+        opacity: 1;
+        transform: translateX(0px);
+    }25%{
+        opacity: .60;
+    }50%{
+        opacity: .40;
+    }75%{
+        opacity: .20;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+/*Le bloc des animations  fin*/
