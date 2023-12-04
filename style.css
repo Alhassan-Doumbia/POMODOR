@@ -101,9 +101,14 @@ main {
   margin-top: 60px;
   margin-left: 18%;
 }
-.timeZone .chronoZone img {
-  width: 64px;
-  height: 64px;
+.timeZone .chronoZone .workingState {
+  min-height: 64px;
+  min-width: 64px;
+  width: fit-content;
+  height: fit-content;
+  background: url("Image&Data/WorkingState.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .timeZone .chronoZone .timer {
   display: flex;
@@ -390,6 +395,23 @@ textarea .taskDefineplaceholder {
   width: 100%;
 }
 
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #11A37F;
+  font-family: "Vpro-Bold";
+  outline: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin: 10px 0px;
+}
+
+.pauseTimer {
+  background-color: #FF1D15;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -552,6 +574,15 @@ footer p:nth-last-child(1) {
   100% {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+@keyframes backgroundChanges {
+  0% {
+    background-color: #1E1E1E;
+  }
+  100% {
+    background-color: #11A37F;
+    color: #FFFFFF;
   }
 }
 /*Le bloc des animations  fin*/

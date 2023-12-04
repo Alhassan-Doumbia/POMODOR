@@ -111,9 +111,14 @@ main{position: relative;}
         margin-top:60px;
         margin-left:18%;
         // background-color: blue;
-            img{
-                width: 64px;
-                height: 64px;
+            .workingState{
+                min-height:64px;
+                min-width:64px;
+                width:fit-content;
+                height:fit-content;
+                background: url("Image&Data/WorkingState.png");
+                background-size: cover;
+                background-repeat: no-repeat;
             }
             .timer{
                 display: flex;
@@ -429,6 +434,23 @@ input[type="checkbox"]:checked{
 }
 // style du button et animation{fin]
 //meerci element olivier pour le footer 
+button{
+    width:150px;
+    height: 40px;
+    border-radius: 7px;
+    background-color: $break-color;
+    font-family:"Vpro-Bold";
+    outline: none;
+    border: none;
+    color: $text-color;
+
+    cursor: pointer;
+    margin: 10px 0px;
+    
+}
+.pauseTimer{
+    background-color:#FF1D15;
+}
 
 footer{
     display: flex;
@@ -527,6 +549,7 @@ footer p:nth-last-child(1){
          filter: brightness(0.7);
         }
     }
+   
     //pour le moment le footer sera désactivé 
     footer{
         font-size: 12px;
@@ -590,6 +613,15 @@ footer p:nth-last-child(1){
     100%{
         opacity: 0;
         transform: translateX(100%);
+    }
+}
+@keyframes backgroundChanges {
+    0%{
+        background-color:$background;
+    }
+    100%{
+        background-color: $break-color;
+        color:$text-color;
     }
 }
 /*Le bloc des animations  fin*/
